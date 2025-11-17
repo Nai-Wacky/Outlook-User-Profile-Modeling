@@ -30,10 +30,7 @@ def generate_access_token(app_id, scopes):
 
 if __name__ == "__main__":
     # ID de la aplicacion que nos dio AZURE
-    APP_ID = 'e98ea992-fd7c-4529-a12a-025a265c94f1'
+    APP_ID = env('APP_ID')
     # Permisos que son delegados
     SCOPES = ['User.Read'] 
-
-    token_response = generate_access_token(APP_ID, SCOPES)
-    print(token_response['access_token'])
 

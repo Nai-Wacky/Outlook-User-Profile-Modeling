@@ -1,2 +1,3 @@
 /api_token_access.json
 /__pycache__
+/.env
