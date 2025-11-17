@@ -10,7 +10,8 @@ __pycache__/
 *.py[cod]
 *$py.class
 
-#token
+# emails and tokens
+emails/
 api_token_access.json
 
 # C extensions
