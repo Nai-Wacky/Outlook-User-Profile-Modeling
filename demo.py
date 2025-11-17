@@ -3,10 +3,19 @@ import requests
 from ms_graph import generate_access_token
 
 def get_emails(headers):
-    response = requests.get(GRAPH_API_ENDPOINT + 'me/messages?$select=internetMessageHeaders&$top=10')
+
+    try:
+        response = requests.get(
+            GRAPH_API_ENDPOINT + 'me/messages?$select=internetMessageHeaders&$top=10'
+            
+            )
+
+    except Exception as e:
+        print(e)
+        return False
 
 # Step 1: Get the acces token
-APP_ID = 'e98ea992-fd7c-4529-a12a-025a265c94f1'
+APP_ID = os.getenv('APP_ID')
 SCOPES = ['Mail.Read']
 GRAPH_API_ENDPOINT = 'https://graph.microsoft.com/v1.0'
 

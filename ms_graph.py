@@ -1,6 +1,7 @@
 import os
 import webbrowser
 import msal
+from dotenv import load_dotenv
 
 def generate_access_token(app_id, scopes):
     access_token_cache = msal.SerializableTokenCache()
@@ -30,7 +31,7 @@ def generate_access_token(app_id, scopes):
 
 if __name__ == "__main__":
     # ID de la aplicacion que nos dio AZURE
-    APP_ID = env('APP_ID')
+    APP_ID = os.getenv('APP_ID')
     # Permisos que son delegados
     SCOPES = ['User.Read'] 
 
